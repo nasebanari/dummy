@@ -5,14 +5,19 @@ let pray_se = () => {
  warning.play();
 };
 
+let elect = () => {
+  volt = new Audio('electric.mp3');
+  volt.play();
+};
+
 
 
 //ブラウザバック禁止
-history.pushState(null, null, null);
+history.pushState(null, null, location.href);
 window.addEventListener('popstate', (e) => {
-  history.go(1);
+elect();
+history.go(1);
 });
-
 
 //ポップアップを出す
 window.onload = function() {
@@ -40,6 +45,3 @@ window.onload = function() {
 
 
 
-//$(function popup(){
-//$('.modal').modal();
-//$('#alert').modal('open');
